@@ -31,3 +31,19 @@ sayHello: function() {
 
 Result: ✔
 #####
+
+# Lesson 13 - Binding to Attributes
+
+- We can only use {{ }} on places where there normally is text. WE CANNOT use {{ }} on HTML elements.
+- v-bind binds the Vue data property or method onto the HTML element.
+
+##### Example (Link = google.com) #####
+<p>{{ sayHello() }} - <a href="{{ link }}">Google</a></p>
+
+Link: "%7B%7B%20link%20%7D%7D" -> "{{ link }}" is encoded as the link itself
+
+<p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
+
+Link: "google.com" -> We bing the link property to the <a> element.
+
+#####
