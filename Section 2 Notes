@@ -13,3 +13,21 @@ methods: {
 
 Result: Hello!
 ######
+
+# Lesson 12 - Accessing Data in the Vue Instance
+
+- We can return any data's property from the methods. However, we need to add "this." before the name of the property, since the methods don't have direct access to data. 
+
+##### Example #####
+sayHello: function() {
+    return title;
+}
+
+Result: ✘ (title is not defined)
+---//---//---
+sayHello: function() {
+    return this.title;
+}
+
+Result: ✔
+#####
