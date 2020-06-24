@@ -9,8 +9,8 @@
     </head>
     <body>
         <div id="app">
-            <input type="text" v-on:input="changeTitle">
-            <p>{{ title }}</p>
+            <!-- <input type="text" v-on:input="changeTitle"> -->
+            <p>{{ sayHello() }}</p>
         </div>
     <script>
         new Vue({
@@ -19,8 +19,11 @@
                 title: 'Hello World!'
             },
             methods: {
-                changeTitle: function(event) {
-                    this.title = event.target.value;
+                // changeTitle: function(event) {
+                //     this.title = event.target.value;
+                // }
+                sayHello: function() {
+                    return 'Hello!';
                 }
             }
         });

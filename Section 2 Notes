@@ -1,0 +1,15 @@
+# Lesson 11 - How the VueJS Template Syntax and Instance Work Together
+
+- We can run Vue Methods inside HTML DOMs. However, we have to return something to the DOM that the DOM can load. In other words, <p> can contain any text. If we return a string to the <p>, it can load it.
+
+###### Example #####
+methods: {
+    sayHello: function() {
+        return 'Hello!';
+    }
+}
+
+<p>{{ sayHello() }}</p>
+
+Result: Hello!
+######
