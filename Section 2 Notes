@@ -51,3 +51,12 @@ Link: "google.com" -> We bing the link property to the <a> element.
 # Lesson 15 - Disable Re-Rendering with v-once
 
 - v-once will make the HTML render once and will not be updated if it changes later in the code.
+
+#####
+
+# Lesson 16 - How to Output Raw HTML
+
+- The default behavior of Vue.js is rendering in text form. This behavior ensures that there will be no CRSR problems.
+- v-html will render the data as a HTML element.
+
+#####
