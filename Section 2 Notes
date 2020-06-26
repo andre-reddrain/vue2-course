@@ -60,3 +60,16 @@ Link: "google.com" -> We bing the link property to the <a> element.
 - v-html will render the data as a HTML element.
 
 #####
+
+# Lesson 19 - Listening to Events
+
+- v-on will listen to any declared event (mouseOn, click, mouseHover...).
+
+##### Example #####
+
+v-on:click="increase"
+
+v-on:click -> Event that is going to be listening (click).
+increase -> Method declared on Vue instance.
+
+#####
