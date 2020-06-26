@@ -47,3 +47,7 @@ Link: "%7B%7B%20link%20%7D%7D" -> "{{ link }}" is encoded as the link itself
 Link: "google.com" -> We bing the link property to the <a> element.
 
 #####
+
+# Lesson 15 - Disable Re-Rendering with v-once
+
+- v-once will make the HTML render once and will not be updated if it changes later in the code.
