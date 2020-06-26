@@ -86,3 +86,10 @@ increase -> Method declared on Vue instance.
 - VueJS saves the automated created "event" into a protected variable $event. It can also be used as a parameter.
 
 #####
+
+# Lesson 22 - Modifying an Event - with Event Modifiers
+
+- Event modifiers, such as stop (Prevents Propagation) & prevent (???) can be applied while declaring the event.
+(v-on:mousemove.stop)
+
+#####
