@@ -73,3 +73,9 @@ v-on:click -> Event that is going to be listening (click).
 increase -> Method declared on Vue instance.
 
 #####
+
+# Lesson 20 - Getting Event Data from the Event Object
+
+- "event" is created automatically and can be used as a parameter to our methods.
+
+#####
