@@ -79,3 +79,10 @@ increase -> Method declared on Vue instance.
 - "event" is created automatically and can be used as a parameter to our methods.
 
 #####
+
+# Lesson 21 - Passing your own Arguments with Events
+
+- We can pass our own arguments: v-on:click="method('Hello!')".
+- VueJS saves the automated created "event" into a protected variable $event. It can also be used as a parameter.
+
+#####
