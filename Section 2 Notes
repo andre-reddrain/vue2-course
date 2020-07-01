@@ -104,3 +104,11 @@ increase -> Method declared on Vue instance.
 - Documentation on Keyboard Event Modifiers: https://vuejs.org/v2/guide/events.html#Key-Modifiers
 
 #####
+
+# Lesson 24 - Writing JavaScript Code in the Templates
+
+- When accessing the Vue instance in the template (v-on...), we can write simple JavaScript on it, as long as it doesn't contain a if, else, for, and so on.
+
+- Template can be a mixture of HTML and JS, as long as you use template expressions ({{ }}).
+
+#####
