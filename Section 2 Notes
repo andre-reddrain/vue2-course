@@ -112,3 +112,12 @@ increase -> Method declared on Vue instance.
 - Template can be a mixture of HTML and JS, as long as you use template expressions ({{ }}).
 
 #####
+
+# Lesson 25 - Using Two-Way-Binding
+
+- v-model can bind a data property to a DOM. By binding it, if the data property or the DOM content is changed (ex: input), it will change on both on DOM and on the Vue Instance.
+If the Data property that is binded also changes, the DOM content also changes.
+
+- (HTML DOM) v-model="name" <-> name: 'xxx' (Vue Data)
+
+#####
