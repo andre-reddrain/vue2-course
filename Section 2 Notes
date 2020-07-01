@@ -95,3 +95,12 @@ increase -> Method declared on Vue instance.
 - Documentation on Event Modifiers: https://vuejs.org/v2/guide/events.html#Event-Modifiers
 
 #####
+
+# Lesson 23 - Listening to Keyboard Events
+
+- Keyboard Events can be applied while declaring the event. These events, in many cases, are to be executed when one or multiple keys on the keyboard are pressed.
+(v-on:keyup.enter.space="method") -> Will run method when ENTER or SPACE are pressed.
+
+- Documentation on Keyboard Event Modifiers: https://vuejs.org/v2/guide/events.html#Key-Modifiers
+
+#####
