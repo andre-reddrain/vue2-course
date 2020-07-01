@@ -8,12 +8,12 @@
     <!-- 2) Listen to the "keydown" event and store the value in a data property
     (hint: event.target.value gives you the value) ✓ -->
     <div>
-        <input v-on:keydown="storeValue($event)" type="text">
+        <input v-on:keydown="value = $event.target.value" type="text">
         <p>{{ value }}</p>
     </div>
     <!-- 3) Adjust the example from 2) to only fire if the "key down" is the ENTER key ✓ -->
     <div>
-        <input v-on:keydown.enter="storeValue($event)" type="text">
+        <input v-on:keydown.enter="value = $event.target.value" type="text">
         <p>{{ value }}</p>
     </div>
 </div>
@@ -27,9 +27,6 @@
         methods: {
             showAlert: function() {
                 alert("This is a Alert!");
-            },
-            storeValue: function(event) {
-                this.value = event.target.value;
             }
         }
     });
