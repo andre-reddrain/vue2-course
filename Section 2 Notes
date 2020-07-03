@@ -137,3 +137,12 @@ In other words, the increment of a number should always update the HTML element 
 This will reduce the ammount of times a function needs to be run, because on larger projects, the constant rerun of a function can be fatal to performance.
 
 #####
+
+# Lesson 27 - An Alternative to Computed Properties: Watching for Changes
+
+- New Vue Instance Option:
+    - watch -> Execute code upon data changes.
+
+- Computed Properties -> Synchronous
+
+#####
