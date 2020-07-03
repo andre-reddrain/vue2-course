@@ -152,3 +152,11 @@ This will reduce the ammount of times a function needs to be run, because on lar
 - 'v-on:' can be replaced with '@'
 
 - 'v-bind' can be removed.
+
+#####
+
+# Lesson 29 - Dynamic Styling with CSS Classes - Basics
+
+- We can bind CSS classes to the DOM via VueJS by simply using 'v-bind' or it's shorthand, ':'.
+
+#####
