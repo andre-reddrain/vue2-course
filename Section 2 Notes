@@ -146,3 +146,9 @@ This will reduce the ammount of times a function needs to be run, because on lar
 - Computed Properties -> Synchronous
 
 #####
+
+# Lesson 28 - Saving Time with Shorthands
+
+- 'v-on:' can be replaced with '@'
+
+- 'v-bind' can be removed.
