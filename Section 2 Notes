@@ -121,3 +121,19 @@ If the Data property that is binded also changes, the DOM content also changes.
 - (HTML DOM) v-model="name" <-> name: 'xxx' (Vue Data)
 
 #####
+
+# Lesson 26 - Reacting to Changes with Computed Properties
+
+- Data is not reactive.
+
+- Options for the Vue Instance:
+    - el -> Connect to DOM.
+    - data -> Store Data to be used.
+    - methods -> Methods of this Vue Instance.
+    - computed -> Dependent Properties.
+
+- Functions are run, independent of the data that they use. Computed, however, will only run if the data they contain is changed.
+In other words, the increment of a number should always update the HTML element it's printed in, if it changed values, and not on every action of the page, even if the value of the data stays the same.
+This will reduce the ammount of times a function needs to be run, because on larger projects, the constant rerun of a function can be fatal to performance.
+
+#####
