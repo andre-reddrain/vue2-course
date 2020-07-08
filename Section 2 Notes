@@ -160,3 +160,11 @@ This will reduce the ammount of times a function needs to be run, because on lar
 - We can bind CSS classes to the DOM via VueJS by simply using 'v-bind' or it's shorthand, ':'.
 
 #####
+
+# Lesson 31 - Dynamic Styling with CSS Classes - Using Names
+
+- We can bind CSS classes to the DOM via VueJS data property. (:class="color" | color: 'green' -> class:"green")
+
+- We can also bind more than one class by using an array. (:class="[color, {red: attachRed}]")
+
+#####
