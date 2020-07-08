@@ -168,3 +168,13 @@ This will reduce the ammount of times a function needs to be run, because on lar
 - We can also bind more than one class by using an array. (:class="[color, {red: attachRed}]")
 
 #####
+
+# Lesson 32 - Setting Styles Dynamically (without CSS classes)
+
+- We can bind DOM elements styles on data or computed properties.
+
+- The syntax, when binding styles, cannot be the usual CSS syntax. We can encapsulate the CSS property by '', or we can use camelCase for it.
+:style="{'background-color': color2}"
+:style="{backgroundColor: color2}"
+
+#####
