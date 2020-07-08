@@ -8,7 +8,7 @@
     <hr>
     <div class="demo" :style="{backgroundColor: color2}"></div>
     <div class="demo" :style="myStyle"></div>
-    <div class="demo"></div>
+    <div class="demo" :style="[myStyle, {height: width + 'px'}]"></div>
     <input type="text" v-model="color2">
     <input type="text" v-model="width">
 </div>

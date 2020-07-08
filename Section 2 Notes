@@ -178,3 +178,10 @@ This will reduce the ammount of times a function needs to be run, because on lar
 :style="{backgroundColor: color2}"
 
 #####
+
+# Lesson 33 - Styling Elements with the Array Syntax
+
+- We can also bind element's styles with an array.
+:style="[myStyle, {height: width + 'px'}]"
+
+#####
