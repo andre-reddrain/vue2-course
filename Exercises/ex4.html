@@ -5,30 +5,30 @@
     setInterval tick (attach respective class to the div with id "effect" below) ✓ -->
     <div>
         <button @click="startEffect">Start Effect</button>
-        <div id="effect" :class="[{highlight: highlight}, {shrink: shrink}]"></div>
+        <div id="effect" :class="effectClasses"></div>
     </div>
 
     <!-- 2) Create a couple CSS classes and attach them via the array syntax ✓ -->
-    <div id="effect" :class="[color, {highlight: highlight}]">I got no class :(</div>
+    <div :class="[float, 'blue', 'text-color']">I got no class :(</div>
 
     <!-- 3) Let the user enter a class (create some example classes) and attach it ✓ -->
     <div>
-        <input type="text" v-model="color2">
-        <div id="effect" :class="color2"></div>
+        <input type="text" v-model="userClass">
+        <div :class="[{visible: true}, userClass]"></div>
     </div>
 
-    <!-- 4) Let the user enter a class (✓) and enter true/false for another class (create some example classes)
+    <!-- 4) Let the user enter a class and enter true/false for another class (create some example classes)
     and attach the classes -->
     <div>
-        <input type="text" v-model="inputClass">
-        <input type="text" v-model="choise">
-        <div id="effect" :class="[inputClass, choise]"></div>
+        <input type="text" v-model="userClass">
+        <input type="text" v-model="isVisible">
+        <div :class="[{visible: isVisible}, userClass]"></div>
     </div>
 
     <!-- 5) Repeat 3) but now with values for styles (instead of class names). Attach the respective styles. ✓ -->
     <div>
-        <input type="text" v-model="color3">
-        <div id="effect" :style="myStyle"></div>
+        <input type="text" v-model="myStyle.backgroundColor">
+        <div :style="myStyle"></div>
     </div>
 
     <!-- 6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button. ✓ -->
@@ -57,16 +57,21 @@
         width: 50px !important;
     }
     /* Example classes used on the exercise */
-    .red {
-        background-color: red;
-    }
-
-    .green {
-        background-color: green;
-    }
-
     .blue {
         background-color: blue;
+    }
+
+    .float {
+        float: right;
+    }
+
+    .text-color {
+        color: yellow;
+    }
+
+    .visible {
+        width: 100px;
+        height: 50px;
     }
     /* Progress bar */
     .meter { 
@@ -106,35 +111,32 @@
     new Vue({
         el: '#exercise',
         data: {
-            highlight: false,
-            shrink: true,
-            color: 'blue',
-            color2: 'green',
-            inputClass: 'highlight',
-            choise: 'true',
-            color3: '',
+            effectClasses: {
+                highlight: false,
+                shrink: true
+            },
+            float: 'float',
+            userClass: '',
+            isVisible: true,
+            myStyle: {
+                width: '100px',
+                height: '150px',
+                backgroundColor: 'gray'
+            },
             progress: 0
-        },
-        computed: {
-            myStyle: function() {
-                return {
-                    backgroundColor: this.color3,
-                }
-            }
         },
         methods: {
             startEffect: function() {
                 var vm = this;
                 setInterval(() => {
-                    vm.highlight = !vm.highlight,
-                    vm.shrink = !vm.shrink
+                    vm.effectClasses.highlight = !vm.effectClasses.highlight;
+                    vm.effectClasses.shrink = !vm.effectClasses.shrink;
                 }, 1000);
             },
             startProgress: function() {
                 var vm = this;
                 setInterval(() => {
-                    vm.progress = vm.progress + 1,
-                    console.log(vm.progress)
+                    vm.progress = vm.progress + 1;
                 }, 500);
             }
         }
