@@ -1,0 +1,11 @@
+# Lesson 37 - Conditional Rendering with v-if
+
+- v-if attaches or detaches elements to the DOM. It does not hide them.
+
+- v-else will automatically refer to the lattest v-if.
+
+- There is no v-elseif. For that, just create a new v-if statement.
+
+- If v-if detaches an element, all nested elements will also be detached.
+
+#####
