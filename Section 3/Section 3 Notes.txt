@@ -15,3 +15,13 @@
 - Documentation on v-else-if: https://vuejs.org/v2/guide/conditional.html#v-else-if
 
 #####
+
+# Lesson 39 - Using an Alternative v-if Syntax
+
+- We can create a <template>, which can nest any elements. <template> is not read by the HTML as an element, therefore it's not displayed on the Inspect Page.
+
+- Using <template> can be used to show or hide many elements, without using any default HTML elements. We can replace it with <div>, but it might have some side effects.
+
+- By hiding the <template>, any nested elements, as previously stated, will be detatched.
+
+#####
