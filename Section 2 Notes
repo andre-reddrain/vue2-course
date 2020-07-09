@@ -1,0 +1,187 @@
+# Lesson 11 - How the VueJS Template Syntax and Instance Work Together
+
+- We can run Vue Methods inside HTML DOMs. However, we have to return something to the DOM that the DOM can load. In other words, <p> can contain any text. If we return a string to the <p>, it can load it.
+
+###### Example #####
+methods: {
+    sayHello: function() {
+        return 'Hello!';
+    }
+}
+
+<p>{{ sayHello() }}</p>
+
+Result: Hello!
+######
+
+# Lesson 12 - Accessing Data in the Vue Instance
+
+- We can return any data's property from the methods. However, we need to add "this." before the name of the property, since the methods don't have direct access to data. 
+
+##### Example #####
+sayHello: function() {
+    return title;
+}
+
+Result: ✘ (title is not defined)
+---//---//---
+sayHello: function() {
+    return this.title;
+}
+
+Result: ✔
+#####
+
+# Lesson 13 - Binding to Attributes
+
+- We can only use {{ }} on places where there normally is text. WE CANNOT use {{ }} on HTML elements.
+- v-bind binds the Vue data property or method onto the HTML element.
+
+##### Example (Link = google.com) #####
+<p>{{ sayHello() }} - <a href="{{ link }}">Google</a></p>
+
+Link: "%7B%7B%20link%20%7D%7D" -> "{{ link }}" is encoded as the link itself
+
+<p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
+
+Link: "google.com" -> We bing the link property to the <a> element.
+
+#####
+
+# Lesson 15 - Disable Re-Rendering with v-once
+
+- v-once will make the HTML render once and will not be updated if it changes later in the code.
+
+#####
+
+# Lesson 16 - How to Output Raw HTML
+
+- The default behavior of Vue.js is rendering in text form. This behavior ensures that there will be no CRSR problems.
+- v-html will render the data as a HTML element.
+
+#####
+
+# Lesson 19 - Listening to Events
+
+- v-on will listen to any declared event (mouseOn, click, mouseHover...).
+
+##### Example #####
+
+v-on:click="increase"
+
+v-on:click -> Event that is going to be listening (click).
+increase -> Method declared on Vue instance.
+
+#####
+
+# Lesson 20 - Getting Event Data from the Event Object
+
+- "event" is created automatically and can be used as a parameter to our methods.
+
+#####
+
+# Lesson 21 - Passing your own Arguments with Events
+
+- We can pass our own arguments: v-on:click="method('Hello!')".
+- VueJS saves the automated created "event" into a protected variable $event. It can also be used as a parameter.
+
+#####
+
+# Lesson 22 - Modifying an Event - with Event Modifiers
+
+- Event modifiers, such as stop (Prevents Propagation) & prevent (???) can be applied while declaring the event.
+(v-on:mousemove.stop)
+
+- Documentation on Event Modifiers: https://vuejs.org/v2/guide/events.html#Event-Modifiers
+
+#####
+
+# Lesson 23 - Listening to Keyboard Events
+
+- Keyboard Events can be applied while declaring the event. These events, in many cases, are to be executed when one or multiple keys on the keyboard are pressed.
+(v-on:keyup.enter.space="method") -> Will run method when ENTER or SPACE are pressed.
+
+- Documentation on Keyboard Event Modifiers: https://vuejs.org/v2/guide/events.html#Key-Modifiers
+
+#####
+
+# Lesson 24 - Writing JavaScript Code in the Templates
+
+- When accessing the Vue instance in the template (v-on...), we can write simple JavaScript on it, as long as it doesn't contain a if, else, for, and so on.
+
+- Template can be a mixture of HTML and JS, as long as you use template expressions ({{ }}).
+
+#####
+
+# Lesson 25 - Using Two-Way-Binding
+
+- v-model can bind a data property to a DOM. By binding it, if the data property or the DOM content is changed (ex: input), it will change on both on DOM and on the Vue Instance.
+If the Data property that is binded also changes, the DOM content also changes.
+
+- (HTML DOM) v-model="name" <-> name: 'xxx' (Vue Data)
+
+#####
+
+# Lesson 26 - Reacting to Changes with Computed Properties
+
+- Data is not reactive.
+
+- Options for the Vue Instance:
+    - el -> Connect to DOM.
+    - data -> Store Data to be used.
+    - methods -> Methods of this Vue Instance.
+    - computed -> Dependent Properties.
+
+- Functions are run, independent of the data that they use. Computed, however, will only run if the data they contain is changed.
+In other words, the increment of a number should always update the HTML element it's printed in, if it changed values, and not on every action of the page, even if the value of the data stays the same.
+This will reduce the ammount of times a function needs to be run, because on larger projects, the constant rerun of a function can be fatal to performance.
+
+#####
+
+# Lesson 27 - An Alternative to Computed Properties: Watching for Changes
+
+- New Vue Instance Option:
+    - watch -> Execute code upon data changes.
+
+- Computed Properties -> Synchronous
+
+#####
+
+# Lesson 28 - Saving Time with Shorthands
+
+- 'v-on:' can be replaced with '@'
+
+- 'v-bind' can be removed.
+
+#####
+
+# Lesson 29 - Dynamic Styling with CSS Classes - Basics
+
+- We can bind CSS classes to the DOM via VueJS by simply using 'v-bind' or it's shorthand, ':'.
+
+#####
+
+# Lesson 31 - Dynamic Styling with CSS Classes - Using Names
+
+- We can bind CSS classes to the DOM via VueJS data property. (:class="color" | color: 'green' -> class:"green")
+
+- We can also bind more than one class by using an array. (:class="[color, {red: attachRed}]")
+
+#####
+
+# Lesson 32 - Setting Styles Dynamically (without CSS classes)
+
+- We can bind DOM elements styles on data or computed properties.
+
+- The syntax, when binding styles, cannot be the usual CSS syntax. We can encapsulate the CSS property by '', or we can use camelCase for it.
+:style="{'background-color': color2}"
+:style="{backgroundColor: color2}"
+
+#####
+
+# Lesson 33 - Styling Elements with the Array Syntax
+
+- We can also bind element's styles with an array.
+:style="[myStyle, {height: width + 'px'}]"
+
+#####
