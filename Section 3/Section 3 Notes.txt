@@ -4,8 +4,14 @@
 
 - v-else will automatically refer to the lattest v-if.
 
-- There is no v-elseif. For that, just create a new v-if statement.
-
 - If v-if detaches an element, all nested elements will also be detached.
+
+#####
+
+# Lesson 38 - v-else-if in Vue.js 2.1
+
+- From Version 2.1 and so on, there is actually a v-else-if.
+
+- Documentation on v-else-if: https://vuejs.org/v2/guide/conditional.html#v-else-if
 
 #####
