@@ -1,0 +1,142 @@
+<script src="../vue.js"></script>
+
+<div id="exercise">
+    <!-- 1) Start the Effect with the Button. The Effect should alternate the "highlight" or "shrink" class on each new
+    setInterval tick (attach respective class to the div with id "effect" below) ✓ -->
+    <div>
+        <button @click="startEffect">Start Effect</button>
+        <div id="effect" :class="[{highlight: highlight}, {shrink: shrink}]"></div>
+    </div>
+
+    <!-- 2) Create a couple CSS classes and attach them via the array syntax ✓ -->
+    <div id="effect" :class="[color, {highlight: highlight}]">I got no class :(</div>
+
+    <!-- 3) Let the user enter a class (create some example classes) and attach it ✓ -->
+    <div>
+        <input type="text" v-model="color2">
+        <div id="effect" :class="color2"></div>
+    </div>
+
+    <!-- 4) Let the user enter a class (✓) and enter true/false for another class (create some example classes)
+    and attach the classes -->
+    <div>
+        <input type="text" v-model="inputClass">
+        <input type="text" v-model="choise">
+        <div id="effect" :class="[inputClass, choise]"></div>
+    </div>
+
+    <!-- 5) Repeat 3) but now with values for styles (instead of class names). Attach the respective styles. ✓ -->
+    <div>
+        <input type="text" v-model="color3">
+        <div id="effect" :style="myStyle"></div>
+    </div>
+
+    <!-- 6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button. ✓ -->
+    <div>
+        <button @click="startProgress">Start Progress</button>
+        <div class="meter">
+            <span :style="{width: progress + '%'}">{{ progress }}%</span>
+        </div>
+    </div>
+</div>
+
+<style>
+    #effect {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+    }
+
+    .highlight {
+        background-color: red;
+        width: 200px !important;
+    }
+
+    .shrink {
+        background-color: gray;
+        width: 50px !important;
+    }
+    /* Example classes used on the exercise */
+    .red {
+        background-color: red;
+    }
+
+    .green {
+        background-color: green;
+    }
+
+    .blue {
+        background-color: blue;
+    }
+    /* Progress bar */
+    .meter { 
+        height: 20px;  /* Can be anything */
+        position: relative;
+        background: #555;
+        -moz-border-radius: 25px;
+        -webkit-border-radius: 25px;
+        border-radius: 25px;
+        padding: 10px;
+        box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+    }
+
+    .meter > span {
+        display: block;
+        height: 100%;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        background-color: rgb(43,194,83);
+        background-image: linear-gradient(
+            center bottom,
+            rgb(43,194,83) 37%,
+            rgb(84,240,84) 69%
+        );
+        box-shadow: 
+            inset 0 2px 9px  rgba(255,255,255,0.3),
+            inset 0 -2px 6px rgba(0,0,0,0.4);
+        position: relative;
+        overflow: hidden;
+        }
+
+</style>
+
+<script>
+    new Vue({
+        el: '#exercise',
+        data: {
+            highlight: false,
+            shrink: true,
+            color: 'blue',
+            color2: 'green',
+            inputClass: 'highlight',
+            choise: 'true',
+            color3: '',
+            progress: 0
+        },
+        computed: {
+            myStyle: function() {
+                return {
+                    backgroundColor: this.color3,
+                }
+            }
+        },
+        methods: {
+            startEffect: function() {
+                var vm = this;
+                setInterval(() => {
+                    vm.highlight = !vm.highlight,
+                    vm.shrink = !vm.shrink
+                }, 1000);
+            },
+            startProgress: function() {
+                var vm = this;
+                setInterval(() => {
+                    vm.progress = vm.progress + 1,
+                    console.log(vm.progress)
+                }, 500);
+            }
+        }
+    });
+</script>
