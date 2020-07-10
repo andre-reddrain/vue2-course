@@ -31,3 +31,9 @@
 - v-show works the same way as v-if, only difference is that it does not detach the element from the DOM.
 
 #####
+
+# Lesson 41 - Rendering Lists with v-for
+
+- v-for is used to output a list. Syntax: v-for="person in persons".
+
+#####
