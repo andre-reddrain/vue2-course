@@ -37,3 +37,12 @@
 - v-for is used to output a list. Syntax: v-for="person in persons".
 
 #####
+
+# Lesson 42 - Getting the Current Index
+
+- Inside the v-for syntax, we can collect the index number of each object as well.
+v-for="(person, i) in persons"
+
+- No matter the name placed inside the pharentesis, the first position (person) will always be the element, and the second position (i) will always be the index of that element.
+
+#####
