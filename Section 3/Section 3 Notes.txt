@@ -46,3 +46,9 @@ v-for="(person, i) in persons"
 - No matter the name placed inside the pharentesis, the first position (person) will always be the element, and the second position (i) will always be the index of that element.
 
 #####
+
+# Lesson 43 - Using an Alternative v-for Syntax
+
+- v-for can also work with the <template> element. Functions the same as of Lesson 39.
+
+#####
