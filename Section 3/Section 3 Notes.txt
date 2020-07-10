@@ -1,0 +1,86 @@
+# Lesson 37 - Conditional Rendering with v-if
+
+- v-if attaches or detaches elements to the DOM. It does not hide them.
+
+- v-else will automatically refer to the lattest v-if.
+
+- If v-if detaches an element, all nested elements will also be detached.
+
+#####
+
+# Lesson 38 - v-else-if in Vue.js 2.1
+
+- From Version 2.1 and so on, there is actually a v-else-if.
+
+- Documentation on v-else-if: https://vuejs.org/v2/guide/conditional.html#v-else-if
+
+#####
+
+# Lesson 39 - Using an Alternative v-if Syntax
+
+- We can create a <template>, which can nest any elements. <template> is not read by the HTML as an element, therefore it's not displayed on the Inspect Page.
+
+- Using <template> can be used to show or hide many elements, without using any default HTML elements. We can replace it with <div>, but it might have some side effects.
+
+- By hiding the <template>, any nested elements, as previously stated, will be detatched.
+
+#####
+
+# Lesson 40 - Don't Detach it with v-show
+
+- v-show works the same way as v-if, only difference is that it does not detach the element from the DOM.
+
+#####
+
+# Lesson 41 - Rendering Lists with v-for
+
+- v-for is used to output a list (Array or Object). Syntax: v-for="person in persons".
+
+#####
+
+# Lesson 42 - Getting the Current Index
+
+- Inside the v-for syntax, we can collect the index number of each property as well.
+v-for="(person, i) in persons"
+
+- No matter the name placed inside the pharentesis, the first position (person) will always be the property, and the second position (i) will always be the index of that property.
+
+- This order only applies to arrays!
+
+#####
+
+# Lesson 43 - Using an Alternative v-for Syntax
+
+- v-for can also work with the <template> element. Functions the same as of Lesson 39.
+
+#####
+
+# Lesson 44 - Looping through Objects
+
+- We can make the v-for syntax more complex when working with objects.
+
+##### Example #####
+<li v-for="person in persons">
+    <div v-for="(value, key, index) in person">{{ key }}: {{ value }} ({{ index }})</div>
+</li>
+
+The order:
+    - value -> Content of the property of the object.
+    - key -> Name of the property of the object.
+    - index -> Index of the property of the object.
+
+#####
+
+# Lesson 45 - Looping through a List of Numbers
+
+- By specifying a number in a v-for (v-for="n in 999"), it will loop through the range of ints, starting on 1.
+
+#####
+
+# Lesson 46 - Keeping Track of Elements when using v-for
+
+- By assigning a unique key to any element on a v-for, VueJs will remember the element AND it's position.
+
+- Not using a key makes VueJs remember only the position of the element.
+
+#####
