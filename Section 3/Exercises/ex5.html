@@ -7,6 +7,8 @@
         <button @click="toggle = !toggle">Toggle</button>
         <p v-if="toggle">You either see me...</p>
         <p v-else>...or me</p>
+        <p v-show="toggle">You either see me...</p>
+        <p v-show="!toggle">...or me</p>
     </div>
 
     <!-- 2) Output an <ul> of array elements of your choise. Also print the index of the element. ✓ -->
@@ -25,7 +27,14 @@
     {name: 'TESTOBJECT', data: [1.67, 1.33, 0.98, 2.21]}
     (Hint: Use v-for and v-if to achieve this) -->
     <ul>
-        <li v-for="object in exercise4"> {{ object }}</li>
+        <li v-for="object in exercise4">
+            <template v-if="Array.isArray(object)">
+                <li v-for="element in object">{{ element }}</li>
+            </template>
+            <template v-else>
+                {{ object }}
+            </template>
+        </li>
     </ul>
 </div>
 
