@@ -25,3 +25,9 @@
 - By hiding the <template>, any nested elements, as previously stated, will be detatched.
 
 #####
+
+# Lesson 40 - Don't Detach it with v-show
+
+- v-show works the same way as v-if, only difference is that it does not detach the element from the DOM.
+
+#####
