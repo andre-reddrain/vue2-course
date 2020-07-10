@@ -34,21 +34,39 @@
 
 # Lesson 41 - Rendering Lists with v-for
 
-- v-for is used to output a list. Syntax: v-for="person in persons".
+- v-for is used to output a list (Array or Object). Syntax: v-for="person in persons".
 
 #####
 
 # Lesson 42 - Getting the Current Index
 
-- Inside the v-for syntax, we can collect the index number of each object as well.
+- Inside the v-for syntax, we can collect the index number of each property as well.
 v-for="(person, i) in persons"
 
-- No matter the name placed inside the pharentesis, the first position (person) will always be the element, and the second position (i) will always be the index of that element.
+- No matter the name placed inside the pharentesis, the first position (person) will always be the property, and the second position (i) will always be the index of that property.
+
+- This order only applies to arrays!
 
 #####
 
 # Lesson 43 - Using an Alternative v-for Syntax
 
 - v-for can also work with the <template> element. Functions the same as of Lesson 39.
+
+#####
+
+# Lesson 44 - Looping through Objects
+
+- We can make the v-for syntax more complex when working with objects.
+
+##### Example #####
+<li v-for="person in persons">
+    <div v-for="(value, key, index) in person">{{ key }}: {{ value }} ({{ index }})</div>
+</li>
+
+The order:
+    - value -> Content of the property of the object.
+    - key -> Name of the property of the object.
+    - index -> Index of the property of the object.
 
 #####
