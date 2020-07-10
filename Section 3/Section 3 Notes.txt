@@ -73,6 +73,14 @@ The order:
 
 # Lesson 45 - Looping through a List of Numbers
 
-- By specifying a number in a v-for (v-for="n in 999"), it will loop though the range of ints, starting on 1.
+- By specifying a number in a v-for (v-for="n in 999"), it will loop through the range of ints, starting on 1.
+
+#####
+
+# Lesson 46 - Keeping Track of Elements when using v-for
+
+- By assigning a unique key to any element on a v-for, VueJs will remember the element AND it's position.
+
+- Not using a key makes VueJs remember only the position of the element.
 
 #####
