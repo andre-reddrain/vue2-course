@@ -70,3 +70,9 @@ The order:
     - index -> Index of the property of the object.
 
 #####
+
+# Lesson 45 - Looping through a List of Numbers
+
+- By specifying a number in a v-for (v-for="n in 999"), it will loop though the range of ints, starting on 1.
+
+#####
